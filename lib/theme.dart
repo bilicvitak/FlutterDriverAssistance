@@ -13,9 +13,9 @@ final theme = ThemeData(
   colorScheme: ColorScheme.fromSwatch(
     primarySwatch: Colors.indigo,
   ),
-  scaffoldBackgroundColor: MyColors.white,
+  scaffoldBackgroundColor: DAColors.white,
   textTheme: GoogleFonts.robotoTextTheme(),
   cardTheme: const CardTheme(
-    color: MyColors.white,
+    color: DAColors.white,
   ),
 );

@@ -64,13 +64,13 @@ class FlutterDriverAssistanceApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) => ScreenUtilInit(
-        /// Size of `Pixel XL`, device the designer uses in his designs on Figma
-        designSize: const Size(412, 732),
+        /// Size of `iPhone 14`
+        designSize: const Size(390, 844),
         builder: (_, __) => GetMaterialApp(
           navigatorKey: alice.getNavigatorKey(),
           onGenerateTitle: (_) => 'appName'.tr,
           theme: theme,
-          initialRoute: MyRoutes.splashScreen,
+          initialRoute: DARoutes.splashScreen,
           initialBinding: InitialBinding(),
           getPages: pages,
           logWriterCallback: loggingWithLogger,

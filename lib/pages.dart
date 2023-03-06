@@ -19,38 +19,38 @@ import 'package:get/get.dart';
 
 final pages = [
   GetPage(
-    name: MyRoutes.splashScreen,
+    name: DARoutes.splashScreen,
     page: SplashScreen.new,
     binding: SplashBinding(),
   ),
   GetPage(
-    name: MyRoutes.mainScreen,
+    name: DARoutes.mainScreen,
     page: MainScreen.new,
   ),
   GetPage(
-    name: MyRoutes.homeScreen,
+    name: DARoutes.homeScreen,
     page: HomeScreen.new,
     binding: HomeBinding(),
   ),
   GetPage(
-    name: MyRoutes.eventsScreen,
+    name: DARoutes.eventsScreen,
     page: EventsScreen.new,
     binding: EventsBinding(),
   ),
   GetPage(
-    name: MyRoutes.eventDetailsScreen,
+    name: DARoutes.eventDetailsScreen,
     page: EventDetailsScreen.new,
     binding: EventDetailsBinding(),
   ),
   GetPage(
-    name: MyRoutes.createEventScreen,
+    name: DARoutes.createEventScreen,
     page: CreateEventScreen.new,
     binding: CreateEventBinding(),
   ),
 ];
 
 /// All pages have their designated names which can be found here
-class MyRoutes {
+class DARoutes {
   static const splashScreen = '/splash_screen';
   static const mainScreen = '/main_screen';
   static const homeScreen = '/home_screen';

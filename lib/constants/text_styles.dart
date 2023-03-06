@@ -10,13 +10,13 @@ import 'colors.dart';
 
 class MyTextStyles {
   static final country = GoogleFonts.roboto(
-    color: MyColors.black,
+    color: DAColors.black,
     fontSize: 20,
     fontWeight: FontWeight.w500,
     height: 1.6,
   );
   static final error = GoogleFonts.roboto(
-    color: MyColors.red,
+    color: DAColors.red,
     fontSize: 20,
     fontWeight: FontWeight.w700,
     height: 1.6,
