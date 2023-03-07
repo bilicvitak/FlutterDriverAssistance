@@ -77,6 +77,7 @@ class FlutterDriverAssistanceApp extends StatelessWidget {
           locale: Localization.locale,
           fallbackLocale: Localization.fallbackLocale,
           translations: Localization(),
+          debugShowCheckedModeBanner: false,
         ),
       );
 }

@@ -1,11 +1,10 @@
-import 'package:flutter/src/widgets/framework.dart';
-import 'package:flutter/src/widgets/placeholder.dart';
+import 'package:flutter/material.dart';
+import 'package:flutter_driver_assistance/constants/colors.dart';
 
 class CreateEventScreen extends StatelessWidget {
-  const CreateEventScreen({super.key});
-
   @override
-  Widget build(BuildContext context) {
-    return const Placeholder();
-  }
+  Widget build(BuildContext context) => Scaffold(
+        backgroundColor: DAColors.background,
+        body: Text('Add new...'),
+      );
 }

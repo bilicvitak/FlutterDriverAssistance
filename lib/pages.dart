@@ -4,9 +4,8 @@ import 'package:flutter_driver_assistance/screens/event_details/event_details_bi
 import 'package:flutter_driver_assistance/screens/event_details/event_details_screen.dart';
 import 'package:flutter_driver_assistance/screens/events/events_binding.dart';
 import 'package:flutter_driver_assistance/screens/events/events_screen.dart';
-import 'package:flutter_driver_assistance/screens/home/home_binding.dart';
-import 'package:flutter_driver_assistance/screens/home/home_screen.dart';
-import 'package:flutter_driver_assistance/screens/main_screen.dart';
+import 'package:flutter_driver_assistance/screens/main/main_binding.dart';
+import 'package:flutter_driver_assistance/screens/main/main_screen.dart';
 import 'package:flutter_driver_assistance/screens/splash/splash_biding.dart';
 import 'package:flutter_driver_assistance/screens/splash/splash_screen.dart';
 import 'package:get/get.dart';
@@ -26,11 +25,7 @@ final pages = [
   GetPage(
     name: DARoutes.mainScreen,
     page: MainScreen.new,
-  ),
-  GetPage(
-    name: DARoutes.homeScreen,
-    page: HomeScreen.new,
-    binding: HomeBinding(),
+    binding: MainBinding(),
   ),
   GetPage(
     name: DARoutes.eventsScreen,
@@ -53,7 +48,6 @@ final pages = [
 class DARoutes {
   static const splashScreen = '/splash_screen';
   static const mainScreen = '/main_screen';
-  static const homeScreen = '/home_screen';
   static const eventsScreen = '/events_screen';
   static const eventDetailsScreen = '/event_details_screen';
   static const createEventScreen = '/create_event_screen';

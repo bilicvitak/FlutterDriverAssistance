@@ -47,7 +47,7 @@ class SplashScreen extends StatelessWidget {
                       curve: Curves.ease,
                       child: SvgPicture.asset(
                         DAIcons.daLogo,
-                        height: 56.h,
+                        height: 39.h,
                       ),
                     ),
                   ),

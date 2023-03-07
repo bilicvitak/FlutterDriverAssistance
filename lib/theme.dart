@@ -10,12 +10,5 @@ import 'constants/colors.dart';
 
 final theme = ThemeData(
   useMaterial3: true,
-  colorScheme: ColorScheme.fromSwatch(
-    primarySwatch: Colors.indigo,
-  ),
-  scaffoldBackgroundColor: DAColors.white,
-  textTheme: GoogleFonts.robotoTextTheme(),
-  cardTheme: const CardTheme(
-    color: DAColors.white,
-  ),
+  textTheme: GoogleFonts.montserratTextTheme(),
 );

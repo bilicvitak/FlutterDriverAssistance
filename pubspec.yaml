@@ -18,7 +18,7 @@ dependencies:
   # Dependencies
   ## package details on pub.dev
   alice: ^0.2.5 
-  camera: ^0.10.0+1
+  #camera: ^0.10.0+1
   connectivity_plus: ^3.0.3
   device_info_plus: ^4.1.2
   dio: ^4.0.1

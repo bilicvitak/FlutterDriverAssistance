@@ -1,24 +1,18 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 import 'colors.dart';
 
 ///
 /// This is a class where all text styles are stored
-/// You can then reference them in code with `MyTextStyles.someTextStyle`
+/// You can then reference them in code with `DATextStyles.someTextStyle`
 ///
 
-class MyTextStyles {
-  static final country = GoogleFonts.roboto(
-    color: DAColors.black,
-    fontSize: 20,
-    fontWeight: FontWeight.w500,
-    height: 1.6,
-  );
-  static final error = GoogleFonts.roboto(
-    color: DAColors.red,
-    fontSize: 20,
-    fontWeight: FontWeight.w700,
-    height: 1.6,
+class DATextStyles {
+  static final body = GoogleFonts.montserrat(
+    color: DAColors.onPrimary,
+    fontSize: 12,
+    fontWeight: FontWeight.w400,
   );
 }

@@ -12,4 +12,7 @@ class DAColors {
   static const blue = Color(0xFF0000FF);
 
   static const primary = Color(0xFFC8242B);
+  static const background = Color(0xFFF6F6F6);
+  static const onPrimary = Color(0xFF333333);
+  static const border = Color(0xFFDBDBDB);
 }
