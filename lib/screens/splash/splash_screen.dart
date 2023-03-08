@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_driver_assistance/constants/colors.dart';
+import 'package:flutter_driver_assistance/color_schemes.g.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
@@ -17,7 +17,7 @@ class SplashScreen extends StatelessWidget {
           children: [
             /// First Red Container
             Container(
-              color: DAColors.primary,
+              color: lightColorScheme.primary,
             ),
 
             /// White Container
@@ -27,7 +27,7 @@ class SplashScreen extends StatelessWidget {
                 curve: Curves.easeInCubic,
                 bottom: splashController.whiteContainerHeight,
                 child: Container(
-                  color: DAColors.white,
+                  color: Colors.white,
                   height: Get.height,
                   width: Get.width,
                 ),
@@ -62,7 +62,7 @@ class SplashScreen extends StatelessWidget {
                 curve: Curves.easeInCubic,
                 bottom: splashController.redContainerHeight,
                 child: Container(
-                  color: DAColors.primary,
+                  color: lightColorScheme.primary,
                   height: Get.height,
                   width: Get.width,
                 ),

@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_driver_assistance/constants/colors.dart';
 import 'package:flutter_driver_assistance/screens/create_event/create_event_screen.dart';
 import 'package:flutter_driver_assistance/screens/events/events_screen.dart';
 import 'package:flutter_driver_assistance/screens/main/main_controller.dart';
-import 'package:flutter_driver_assistance/widgets/custom_bottom_nav_bar.dart';
+import 'package:flutter_driver_assistance/widgets/custom_navigation_bar.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
@@ -20,9 +19,11 @@ class MainScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) => Scaffold(
+        backgroundColor: Colors.grey.shade50,
         appBar: AppBar(
-          backgroundColor: DAColors.white,
-          shadowColor: DAColors.border,
+          surfaceTintColor: Colors.white,
+          backgroundColor: Colors.white,
+          shadowColor: Colors.grey.shade200,
           elevation: 1,
           automaticallyImplyLeading: false,
           centerTitle: true,
@@ -32,16 +33,18 @@ class MainScreen extends StatelessWidget {
           ),
         ),
         body: Obx(
-          () => Container(
-            child: _screens.elementAt(mainController.selectedIndex),
+          () => Padding(
+            padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 20.h),
+            child: Container(
+              child: _screens.elementAt(mainController.selectedIndex),
+            ),
           ),
         ),
-        bottomNavigationBar: Padding(
-          padding: EdgeInsets.all(8.r),
-          child: Container(
-            margin: EdgeInsets.only(bottom: 8.h),
-            child: CustomBottomNavBar(),
+        bottomNavigationBar: Container(
+          decoration: BoxDecoration(
+            border: Border.all(color: Colors.grey.shade200),
           ),
+          child: CustomNavigationBar(),
         ),
       );
 }

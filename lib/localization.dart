@@ -22,10 +22,16 @@ class Localization extends Translations {
   /// English strings
   final en = {
     'appName': 'Flutter Driver Assistance',
+    'trafficEvents': 'Traffic events',
+    'addEvent': 'Add event',
+    'events': 'Events',
   };
 
   /// Croatian strings
   final hr = {
     'appName': 'Flutter Driver Assistance',
+    'trafficEvents': 'Stanje u prometu',
+    'addEvent': 'Novi događaj',
+    'events': 'Stanje u prometu',
   };
 }

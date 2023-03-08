@@ -70,6 +70,8 @@ class FlutterDriverAssistanceApp extends StatelessWidget {
           navigatorKey: alice.getNavigatorKey(),
           onGenerateTitle: (_) => 'appName'.tr,
           theme: theme,
+          darkTheme: darkTheme,
+          themeMode: ThemeMode.light,
           initialRoute: DARoutes.splashScreen,
           initialBinding: InitialBinding(),
           getPages: pages,
