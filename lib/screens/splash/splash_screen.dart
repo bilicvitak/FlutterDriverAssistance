@@ -17,7 +17,7 @@ class SplashScreen extends StatelessWidget {
           children: [
             /// First Red Container
             Container(
-              color: lightColorScheme.primary,
+              color: context.theme.colorScheme.primary,
             ),
 
             /// White Container
@@ -43,7 +43,7 @@ class SplashScreen extends StatelessWidget {
                   child: Obx(
                     () => AnimatedSlide(
                       offset: Offset(splashController.textSlide, 0),
-                      duration: const Duration(milliseconds: 200),
+                      duration: const Duration(milliseconds: 100),
                       curve: Curves.ease,
                       child: SvgPicture.asset(
                         DAIcons.daLogo,
@@ -58,11 +58,11 @@ class SplashScreen extends StatelessWidget {
             /// Last Red Container
             Obx(
               () => AnimatedPositioned(
-                duration: const Duration(milliseconds: 500),
+                duration: const Duration(milliseconds: 200),
                 curve: Curves.easeInCubic,
-                bottom: splashController.redContainerHeight,
+                top: splashController.redContainerHeight,
                 child: Container(
-                  color: lightColorScheme.primary,
+                  color: context.theme.colorScheme.primary,
                   height: Get.height,
                   width: Get.width,
                 ),

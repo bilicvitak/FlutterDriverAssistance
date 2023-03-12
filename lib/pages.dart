@@ -26,6 +26,8 @@ final pages = [
     name: DARoutes.mainScreen,
     page: MainScreen.new,
     binding: MainBinding(),
+    transition: Transition.upToDown,
+    transitionDuration: const Duration(seconds: 1),
   ),
   GetPage(
     name: DARoutes.eventsScreen,

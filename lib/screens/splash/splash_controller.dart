@@ -1,7 +1,6 @@
 import 'package:flutter_driver_assistance/pages.dart';
 import 'package:get/get.dart';
 
-
 class SplashController extends GetxController {
   /// ------------------------
   /// VARIABLES
@@ -66,10 +65,9 @@ class SplashController extends GetxController {
     textSlide = 0;
 
     /// down drop Red Container
-    await Future.delayed(const Duration(milliseconds: 2500));
+    await Future.delayed(const Duration(milliseconds: 500));
     redContainerHeight = 0;
   }
 
   Future<void> goToApp() async => await Get.offAllNamed(DARoutes.mainScreen);
-  
 }

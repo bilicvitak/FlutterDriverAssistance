@@ -25,6 +25,11 @@ class Localization extends Translations {
     'trafficEvents': 'Traffic events',
     'addEvent': 'Add event',
     'events': 'Events',
+    'eventType': 'Event type',
+    'location': 'Location',
+    'createButton': 'Create',
+    'latitude': 'Latitude',
+    'longitude': 'Longitude',
   };
 
   /// Croatian strings
@@ -33,5 +38,10 @@ class Localization extends Translations {
     'trafficEvents': 'Stanje u prometu',
     'addEvent': 'Novi događaj',
     'events': 'Stanje u prometu',
+    'eventType': 'Tip događaja',
+    'location': 'Location',
+    'createButton': 'Spremi',
+    'latitude': 'Latitude',
+    'longitude': 'Longitude',
   };
 }

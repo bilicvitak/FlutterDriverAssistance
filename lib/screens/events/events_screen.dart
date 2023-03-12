@@ -4,6 +4,8 @@ import 'package:flutter_driver_assistance/widgets/events_list.dart';
 import 'package:get/get.dart';
 
 class EventsScreen extends StatefulWidget {
+  const EventsScreen({super.key});
+
   @override
   State<EventsScreen> createState() => _EventsScreenState();
 }
