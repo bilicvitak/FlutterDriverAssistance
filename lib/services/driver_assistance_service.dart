@@ -25,7 +25,7 @@ class DriverAssistanceService extends GetxService {
         endpoint: endpoint,
         httpMethod: HttpMethod.post,
         parameters: event.toMap(),
-        onSuccess: ((responseData) => responseData));
+        onSuccess: ((responseData) async => responseData));
 
     return (response as String).isEmpty ? event : null;
   }
@@ -36,12 +36,18 @@ class DriverAssistanceService extends GetxService {
     final response = await dio.request(
         endpoint: endpoint,
         httpMethod: HttpMethod.get,
-        onSuccess: ((responseData) => responseData));
+        onSuccess: ((responseData) async => responseData));
 
-    final events =
-        (response as List<dynamic>).map((e) => Event.fromJson(e)).toList();
+    logger.wtf(response);
 
-    return events;
+    if (response != null) {
+      final events =
+          (response as List<dynamic>).map((e) => Event.fromMap(e)).toList();
+
+      return events;
+    }
+
+    return null;
   }
 
   Future<List<EventType>?> getEventTypes() async {
@@ -56,14 +62,5 @@ class DriverAssistanceService extends GetxService {
         (response as List<dynamic>).map((e) => EventType(e as String)).toList();
 
     return eventTypes;
-  }
-
-  @override
-  Future<void> onInit() async {
-    // TODO: implement onInit
-    super.onInit();
-
-    await getEventTypes();
-    await getEvents(45, 18);
   }
 }

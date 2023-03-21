@@ -1,12 +1,21 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_driver_assistance/models/event.dart';
+import 'package:intl/intl.dart';
 
 class EventListTile extends StatelessWidget {
+  final Event event;
+
+  const EventListTile({
+    super.key,
+    required this.event,
+  });
+
   @override
-  Widget build(BuildContext context) => const ListTile(
-        title: Text('Event Type'),
-        subtitle: Text('01.01.2023. 14:30'),
+  Widget build(BuildContext context) => ListTile(
+        title: Text(event.eventType.replaceAll('_', ' ')),
+        subtitle: Text(DateFormat('dd.MM.yyyy hh:mm:ss').format(event.created)),
         tileColor: Colors.white,
-        shape: RoundedRectangleBorder(
+        shape: const RoundedRectangleBorder(
           borderRadius: BorderRadius.all(
             Radius.circular(5),
           ),

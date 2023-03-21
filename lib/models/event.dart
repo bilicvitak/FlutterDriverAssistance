@@ -52,8 +52,8 @@ class Event {
         eventType: map['eventType'] ?? '',
         latitude: map['latitude'] ?? 0,
         longitude: map['longitude'] ?? 0,
-        created: map['created'] ?? DateTime.now(),
-        modified: map['modified'],
+        created: DateTime.parse(map['created'] ?? DateTime.now()),
+        modified: DateTime.tryParse(map['modified'] ?? ''),
         userId: map['userId'],
         active: map['active'] ?? false,
       );

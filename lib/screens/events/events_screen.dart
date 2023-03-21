@@ -26,5 +26,7 @@ class _EventsScreenState extends State<EventsScreen> {
   }
 
   @override
-  Widget build(BuildContext context) => EventsList();
+  Widget build(BuildContext context) => EventsList(
+        controller: eventsController,
+      );
 }
