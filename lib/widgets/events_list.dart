@@ -27,15 +27,17 @@ class EventsList extends StatelessWidget {
               height: 10.h,
             ),
             Obx(
-              () => ListView.builder(
-                shrinkWrap: true,
-                physics: const ScrollPhysics(),
-                itemCount: controller.events.length,
-                itemBuilder: (context, index) => Padding(
-                  padding: EdgeInsets.symmetric(vertical: 5.h),
-                  child: EventListTile(event: controller.events[index]),
-                ),
-              ),
+              () => controller.events.isNotEmpty
+                  ? ListView.builder(
+                      shrinkWrap: true,
+                      physics: const ScrollPhysics(),
+                      itemCount: controller.events.length,
+                      itemBuilder: (context, index) => Padding(
+                        padding: EdgeInsets.symmetric(vertical: 5.h),
+                        child: EventListTile(event: controller.events[index]),
+                      ),
+                    )
+                  : const Text('No events found'),
             )
           ],
         ),

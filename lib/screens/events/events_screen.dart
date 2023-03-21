@@ -26,7 +26,15 @@ class _EventsScreenState extends State<EventsScreen> {
   }
 
   @override
-  Widget build(BuildContext context) => EventsList(
-        controller: eventsController,
+  Widget build(BuildContext context) => Obx(
+        () => !eventsController.showProgressIndicator
+            ? EventsList(
+                controller: eventsController,
+              )
+            : Center(
+                child: CircularProgressIndicator(
+                  color: context.theme.colorScheme.primary,
+                ),
+              ),
       );
 }

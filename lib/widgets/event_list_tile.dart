@@ -13,7 +13,7 @@ class EventListTile extends StatelessWidget {
   @override
   Widget build(BuildContext context) => ListTile(
         title: Text(event.eventType.replaceAll('_', ' ')),
-        subtitle: Text(DateFormat('dd.MM.yyyy hh:mm:ss').format(event.created)),
+        subtitle: Text(DateFormat('dd.MM.yyyy HH:mm:ss').format(event.created)),
         tileColor: Colors.white,
         shape: const RoundedRectangleBorder(
           borderRadius: BorderRadius.all(

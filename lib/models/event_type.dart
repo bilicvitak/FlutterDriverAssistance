@@ -1,5 +1,7 @@
 class EventType {
-  final String eventType;
+  final String id;
 
-  EventType(this.eventType);
+  EventType({
+    required this.id,
+  });
 }

@@ -38,8 +38,6 @@ class DriverAssistanceService extends GetxService {
         httpMethod: HttpMethod.get,
         onSuccess: ((responseData) async => responseData));
 
-    logger.wtf(response);
-
     if (response != null) {
       final events =
           (response as List<dynamic>).map((e) => Event.fromMap(e)).toList();
@@ -58,8 +56,9 @@ class DriverAssistanceService extends GetxService {
         httpMethod: HttpMethod.get,
         onSuccess: ((responseData) async => responseData));
 
-    final eventTypes =
-        (response as List<dynamic>).map((e) => EventType(e as String)).toList();
+    final eventTypes = (response as List<dynamic>)
+        .map((e) => EventType(id: e as String))
+        .toList();
 
     return eventTypes;
   }

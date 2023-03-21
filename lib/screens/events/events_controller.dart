@@ -15,18 +15,21 @@ class EventsController extends GetxController {
   ///
 
   final _events = <Event>[].obs;
+  final _showProgressIndicator = true.obs;
 
   ///
   /// GETTERS
   ///
 
   List<Event> get events => _events;
+  bool get showProgressIndicator => _showProgressIndicator.value;
 
   ///
   /// SETTERS
   ///
 
   set events(List<Event> value) => _events.assignAll(value);
+  set showProgressIndicator(bool value) => _showProgressIndicator.value = value;
 
   ///
   /// INIT
@@ -37,6 +40,7 @@ class EventsController extends GetxController {
     super.onInit();
 
     events = await data.getEvents(45, 18) ?? <Event>[];
+    showProgressIndicator = false;
   }
 
   ///
