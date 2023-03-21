@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_driver_assistance/services/driver_assistance_service.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 
@@ -46,7 +47,8 @@ class InitialBinding extends Bindings {
       ..put(PackageInfoService())
       ..put(StorageService())
       ..put(LocationService())
-      ..put(ConnectivityService());
+      ..put(ConnectivityService())
+      ..put(DriverAssistanceService());
   }
 }
 
