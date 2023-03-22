@@ -28,7 +28,7 @@ class MainScreen extends StatelessWidget {
           automaticallyImplyLeading: false,
           centerTitle: true,
           title: SvgPicture.asset(
-            DAIcons.daLogo,
+            DAIcons.logoText,
             height: 25.h,
           ),
         ),

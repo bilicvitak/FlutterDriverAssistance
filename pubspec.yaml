@@ -77,14 +77,14 @@ flutter:
 flutter_icons:
   android: true
   ios: true
-#  image_path: 'assets/icon.png'
-#  adaptive_icon_background: '#FFFFFF'
-#  adaptive_icon_foreground: 'assets/icon.png'
+  image_path: 'assets/images/da_logo.png'
+  adaptive_icon_background: 'assets/images/da_logo_background.png'
+  adaptive_icon_foreground: 'assets/images/da_logo_foreground.png'
 
 # Configuration for 'flutter_native_splash'
 # Run splash screen generation with 'flutter pub run flutter_native_splash:create'
-flutter_native_splash:
-  android: true
-  ios: true
+#flutter_native_splash:
+#  android: true
+#  ios: true
 #  color: '#FFFFFF'
 #  image: 'assets/icon.png'

@@ -1,3 +1,3 @@
 class DAIcons {
-  static const daLogo = 'assets/icons/DALogo.svg';
+  static const logoText = 'assets/icons/da_logo_text.svg';
 }

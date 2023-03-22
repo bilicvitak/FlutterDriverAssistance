@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_driver_assistance/color_schemes.g.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
@@ -46,7 +45,7 @@ class SplashScreen extends StatelessWidget {
                       duration: const Duration(milliseconds: 100),
                       curve: Curves.ease,
                       child: SvgPicture.asset(
-                        DAIcons.daLogo,
+                        DAIcons.logoText,
                         height: 39.h,
                       ),
                     ),
