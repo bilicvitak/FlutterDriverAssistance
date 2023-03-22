@@ -1,4 +1,5 @@
 import 'package:flutter_driver_assistance/models/event.dart';
+import 'package:flutter_driver_assistance/pages.dart';
 import 'package:flutter_driver_assistance/services/driver_assistance_service.dart';
 import 'package:flutter_driver_assistance/services/logger_service.dart';
 import 'package:get/get.dart';
@@ -16,6 +17,7 @@ class EventsController extends GetxController {
 
   final _events = <Event>[].obs;
   final _showProgressIndicator = true.obs;
+  final _selectedIndex = 0.obs;
 
   ///
   /// GETTERS
@@ -23,6 +25,7 @@ class EventsController extends GetxController {
 
   List<Event> get events => _events;
   bool get showProgressIndicator => _showProgressIndicator.value;
+  int get selectedIndex => _selectedIndex.value;
 
   ///
   /// SETTERS
@@ -30,6 +33,7 @@ class EventsController extends GetxController {
 
   set events(List<Event> value) => _events.assignAll(value);
   set showProgressIndicator(bool value) => _showProgressIndicator.value = value;
+  set selectedIndex(int value) => _selectedIndex.value = value;
 
   ///
   /// INIT
@@ -46,4 +50,7 @@ class EventsController extends GetxController {
   ///
   /// METHODS
   ///
+
+  Future<void> goToEventDetails() async =>
+      await Get.toNamed(DARoutes.eventDetailsScreen);
 }

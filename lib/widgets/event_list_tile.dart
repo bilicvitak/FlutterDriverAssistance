@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_driver_assistance/constants/text_styles.dart';
 import 'package:flutter_driver_assistance/models/event.dart';
 import 'package:intl/intl.dart';
 
@@ -12,8 +13,14 @@ class EventListTile extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) => ListTile(
-        title: Text(event.eventType.replaceAll('_', ' ')),
-        subtitle: Text(DateFormat('dd.MM.yyyy HH:mm:ss').format(event.created)),
+        title: Text(
+          event.eventType.replaceAll('_', ' '),
+          style: DATextStyles.h6,
+        ),
+        subtitle: Text(
+          DateFormat('dd.MM.yyyy HH:mm:ss').format(event.created),
+          style: DATextStyles.subtitle2,
+        ),
         tileColor: Colors.white,
         shape: const RoundedRectangleBorder(
           borderRadius: BorderRadius.all(

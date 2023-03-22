@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_driver_assistance/constants/text_styles.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 
@@ -14,12 +15,13 @@ class PrimaryButton extends StatelessWidget {
         height: 55.h,
         child: TextButton(
           onPressed: onPressed,
-          child: Text(text),
           style: TextButton.styleFrom(
             foregroundColor: Colors.white,
             backgroundColor: context.theme.colorScheme.primary,
-            shape: RoundedRectangleBorder(),
+            shape: const RoundedRectangleBorder(),
+            textStyle: DATextStyles.button,
           ),
+          child: Text(text),
         ),
       );
 }

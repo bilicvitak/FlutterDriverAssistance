@@ -1,7 +1,6 @@
 import 'package:flutter_driver_assistance/screens/create_event/create_event_binding.dart';
 import 'package:flutter_driver_assistance/screens/create_event/create_event_screen.dart';
-import 'package:flutter_driver_assistance/screens/event_details/event_details_binding.dart';
-import 'package:flutter_driver_assistance/screens/event_details/event_details_screen.dart';
+import 'package:flutter_driver_assistance/screens/events/event_details/event_details_screen.dart';
 import 'package:flutter_driver_assistance/screens/events/events_binding.dart';
 import 'package:flutter_driver_assistance/screens/events/events_screen.dart';
 import 'package:flutter_driver_assistance/screens/main/main_binding.dart';
@@ -37,7 +36,6 @@ final pages = [
   GetPage(
     name: DARoutes.eventDetailsScreen,
     page: EventDetailsScreen.new,
-    binding: EventDetailsBinding(),
   ),
   GetPage(
     name: DARoutes.createEventScreen,

@@ -27,7 +27,7 @@ class Localization extends Translations {
     'events': 'Events',
     'eventType': 'Event type',
     'location': 'Location',
-    'createButton': 'Create',
+    'createButton': 'CREATE',
     'latitude': 'Latitude',
     'longitude': 'Longitude',
   };
@@ -40,7 +40,7 @@ class Localization extends Translations {
     'events': 'Stanje u prometu',
     'eventType': 'Tip događaja',
     'location': 'Location',
-    'createButton': 'Spremi',
+    'createButton': 'SPREMI',
     'latitude': 'Latitude',
     'longitude': 'Longitude',
   };

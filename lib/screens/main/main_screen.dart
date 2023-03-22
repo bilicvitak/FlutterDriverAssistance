@@ -12,7 +12,7 @@ import '../../constants/icons.dart';
 class MainScreen extends StatelessWidget {
   final mainController = Get.find<MainController>();
 
-  final _screens = <Widget>[
+  final _screens = const <Widget>[
     EventsScreen(),
     CreateEventScreen(),
   ];

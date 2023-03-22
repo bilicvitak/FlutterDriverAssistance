@@ -52,7 +52,7 @@ class _CreateEventScreenState extends State<CreateEventScreen> {
                       for (var e in controller.eventTypes)
                         DropdownMenuItem(
                           value: e.id,
-                          child: Text(e.id),
+                          child: Text(e.id.replaceAll('_', ' ')),
                         )
                     ],
                     isDense: true,
@@ -97,7 +97,7 @@ class _CreateEventScreenState extends State<CreateEventScreen> {
                   GestureDetector(
                     child: Text(
                       'Pick a location on a map',
-                      style: DATextStyles.body
+                      style: DATextStyles.body1
                           .copyWith(color: context.theme.colorScheme.primary),
                     ),
                   ),

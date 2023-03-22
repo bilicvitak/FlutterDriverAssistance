@@ -34,7 +34,13 @@ class EventsList extends StatelessWidget {
                       itemCount: controller.events.length,
                       itemBuilder: (context, index) => Padding(
                         padding: EdgeInsets.symmetric(vertical: 5.h),
-                        child: EventListTile(event: controller.events[index]),
+                        child: GestureDetector(
+                          onTap: () {
+                            controller.selectedIndex = index;
+                            controller.goToEventDetails();
+                          },
+                          child: EventListTile(event: controller.events[index]),
+                        ),
                       ),
                     )
                   : const Text('No events found'),
