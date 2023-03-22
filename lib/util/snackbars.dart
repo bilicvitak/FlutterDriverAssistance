@@ -4,14 +4,14 @@ import 'package:get/get.dart';
 
 ///
 /// Class which will trigger various snackbars
-/// Can be used throughout the app with `MySnackbars.showSomeSnackbar`
+/// Can be used throughout the app with `DASnackbars.showSomeSnackbar`
 ///
 
-class MySnackbars {
+class DASnackbars {
   /// Snackbar shown if some success happens
   static void showSuccessSnackbar({
     required String message,
-    Color backgroundColor = Colors.blue,
+    Color backgroundColor = Colors.green,
     IconData icon = Icons.check,
   }) =>
       Get.rawSnackbar(
@@ -29,7 +29,7 @@ class MySnackbars {
   /// Snackbar shown if some error happens
   static void showErrorSnackbar({
     required String message,
-    Color backgroundColor = Colors.blue,
+    Color backgroundColor = const Color(0xFFBA1A1A),
     IconData icon = Icons.close,
   }) =>
       Get.rawSnackbar(

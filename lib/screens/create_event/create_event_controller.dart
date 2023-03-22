@@ -25,6 +25,11 @@ class CreateEventController extends GetxController {
   final _latitude = 0.0.obs;
   final _longitude = 0.0.obs;
 
+  final _errorEventType = false.obs;
+  final _errorLatitude = false.obs;
+  final _errorLongitude = false.obs;
+  final _validated = false.obs;
+
   ///
   /// GETTERS
   ///
@@ -34,6 +39,11 @@ class CreateEventController extends GetxController {
   double get latitude => _latitude.value;
   double get longitude => _longitude.value;
 
+  bool get errorEventType => _errorEventType.value;
+  bool get errorLatitude => _errorLatitude.value;
+  bool get errorLongitude => _errorLongitude.value;
+  bool get validated => _validated.value;
+
   ///
   /// SETTERS
   ///
@@ -42,6 +52,11 @@ class CreateEventController extends GetxController {
   set eventType(EventType value) => _eventType.value = value;
   set latitude(double value) => _latitude.value = value;
   set longitude(double value) => _longitude.value = value;
+
+  set errorEventType(bool value) => _errorEventType.value = value;
+  set errorLatitude(bool value) => _errorLatitude.value = value;
+  set errorLongitude(bool value) => _errorLongitude.value = value;
+  set validated(bool value) => _validated.value = value;
 
   ///
   /// INIT
@@ -69,9 +84,15 @@ class CreateEventController extends GetxController {
 
     await data.createEvent(event);
 
-    // todo: Add green/red snackbar
-
     latField.clear();
     longField.clear();
+  }
+
+  void validateFields() {
+    errorEventType = eventType.id == '';
+    errorLatitude = latitude <= 0;
+    errorLongitude = longitude <= 0;
+
+    validated = !(errorEventType || errorLatitude || errorLongitude);
   }
 }

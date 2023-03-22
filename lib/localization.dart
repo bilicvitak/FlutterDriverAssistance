@@ -30,6 +30,8 @@ class Localization extends Translations {
     'createButton': 'CREATE',
     'latitude': 'Latitude',
     'longitude': 'Longitude',
+    'required': 'Field is required',
+    'pickLocation': 'Pick a location on a map',
   };
 
   /// Croatian strings
@@ -43,5 +45,7 @@ class Localization extends Translations {
     'createButton': 'SPREMI',
     'latitude': 'Latitude',
     'longitude': 'Longitude',
+    'required': 'Polje je obavezno',
+    'pickLocation': 'Odaberi lokaciju na mapi',
   };
 }

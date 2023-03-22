@@ -56,11 +56,14 @@ class _CreateEventScreenState extends State<CreateEventScreen> {
                         )
                     ],
                     isDense: true,
-                    onChanged: (value) =>
-                        controller.eventType = EventType(id: value!),
+                    onChanged: (value) => controller
+                      ..eventType = EventType(id: value!)
+                      ..validateFields(),
                     decoration: InputDecoration(
                       border: const OutlineInputBorder(),
                       label: Text('eventType'.tr),
+                      errorText:
+                          controller.errorEventType ? 'required'.tr : null,
                     ),
                   ),
 
@@ -72,10 +75,13 @@ class _CreateEventScreenState extends State<CreateEventScreen> {
                     decoration: InputDecoration(
                       border: const OutlineInputBorder(),
                       label: Text('latitude'.tr),
+                      errorText:
+                          controller.errorLatitude ? 'required'.tr : null,
                     ),
                     controller: controller.latField,
-                    onChanged: (value) =>
-                        controller.latitude = double.tryParse(value) ?? 0,
+                    onSubmitted: (value) => controller
+                      ..latitude = double.tryParse(value) ?? 0
+                      ..validateFields(),
                   ),
 
                   SizedBox(height: 20.h),
@@ -86,17 +92,20 @@ class _CreateEventScreenState extends State<CreateEventScreen> {
                     decoration: InputDecoration(
                       border: const OutlineInputBorder(),
                       label: Text('longitude'.tr),
+                      errorText:
+                          controller.errorLongitude ? 'required'.tr : null,
                     ),
                     controller: controller.longField,
-                    onChanged: (value) =>
-                        controller.longitude = double.tryParse(value) ?? 0,
+                    onSubmitted: (value) => controller
+                      ..longitude = double.tryParse(value) ?? 0
+                      ..validateFields(),
                   ),
 
                   SizedBox(height: 20.h),
 
                   GestureDetector(
                     child: Text(
-                      'Pick a location on a map',
+                      'pickLocation'.tr,
                       style: DATextStyles.body1
                           .copyWith(color: context.theme.colorScheme.primary),
                     ),
@@ -108,6 +117,7 @@ class _CreateEventScreenState extends State<CreateEventScreen> {
             /// Create button
             PrimaryButton(
               text: 'createButton'.tr,
+              enabled: controller.validated,
               onPressed: controller.createEvent,
             ),
           ],

@@ -5,19 +5,28 @@ import 'package:get/get.dart';
 
 class PrimaryButton extends StatelessWidget {
   final String text;
+  final bool enabled;
   final Function() onPressed;
 
-  const PrimaryButton({super.key, required this.text, required this.onPressed});
+  const PrimaryButton({
+    super.key,
+    required this.text,
+    required this.enabled,
+    required this.onPressed,
+  });
 
   @override
   Widget build(BuildContext context) => SizedBox(
         width: double.infinity,
         height: 55.h,
         child: TextButton(
-          onPressed: onPressed,
+          onPressed: enabled ? onPressed : null,
           style: TextButton.styleFrom(
-            foregroundColor: Colors.white,
-            backgroundColor: context.theme.colorScheme.primary,
+            foregroundColor:
+                enabled ? Colors.white : Colors.white.withOpacity(0.4),
+            backgroundColor: enabled
+                ? context.theme.colorScheme.primary
+                : context.theme.colorScheme.primary.withOpacity(0.4),
             shape: const RoundedRectangleBorder(),
             textStyle: DATextStyles.button,
           ),

@@ -35,10 +35,9 @@ class EventsList extends StatelessWidget {
                       itemBuilder: (context, index) => Padding(
                         padding: EdgeInsets.symmetric(vertical: 5.h),
                         child: GestureDetector(
-                          onTap: () {
-                            controller.selectedIndex = index;
-                            controller.goToEventDetails();
-                          },
+                          onTap: () => controller
+                            ..selectedIndex = index
+                            ..goToEventDetails(),
                           child: EventListTile(event: controller.events[index]),
                         ),
                       ),
