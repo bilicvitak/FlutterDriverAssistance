@@ -11,14 +11,14 @@ class DASnackbars {
   /// Snackbar shown if some success happens
   static void showSuccessSnackbar({
     required String message,
-    Color backgroundColor = Colors.green,
+    Color backgroundColor = const Color(0xFFA5D6A7),
     IconData icon = Icons.check,
   }) =>
       Get.rawSnackbar(
         backgroundColor: backgroundColor,
         icon: Icon(
           icon,
-          color: Colors.blue,
+          color: Colors.green,
         ),
         message: message,
         margin: EdgeInsets.all(32.r),
@@ -29,14 +29,14 @@ class DASnackbars {
   /// Snackbar shown if some error happens
   static void showErrorSnackbar({
     required String message,
-    Color backgroundColor = const Color(0xFFBA1A1A),
+    Color backgroundColor = const Color(0xFFFFDAD6),
     IconData icon = Icons.close,
   }) =>
       Get.rawSnackbar(
         backgroundColor: backgroundColor,
         icon: Icon(
           icon,
-          color: Colors.blue,
+          color: const Color(0xFFBA1A1A),
         ),
         message: message,
         margin: EdgeInsets.all(32.r),

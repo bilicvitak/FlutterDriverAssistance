@@ -1,3 +1,4 @@
+import 'package:app_settings/app_settings.dart';
 import 'package:geolocator/geolocator.dart' as geolocator;
 import 'package:get/get.dart';
 import 'package:location/location.dart' as location;
@@ -28,6 +29,8 @@ class LocationService extends GetxService {
     try {
       serviceEnabled = await geolocator.Geolocator.isLocationServiceEnabled();
       if (!serviceEnabled) {
+        await AppSettings.openLocationSettings();
+
         logger
           ..e('LOCATION')
           ..e('--------------------')

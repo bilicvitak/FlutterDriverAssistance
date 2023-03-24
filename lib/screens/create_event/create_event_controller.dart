@@ -2,8 +2,11 @@ import 'package:flutter/widgets.dart';
 import 'package:flutter_driver_assistance/models/event.dart';
 import 'package:flutter_driver_assistance/models/event_type.dart';
 import 'package:flutter_driver_assistance/services/driver_assistance_service.dart';
+import 'package:flutter_driver_assistance/services/location_service.dart';
 import 'package:flutter_driver_assistance/services/logger_service.dart';
 import 'package:get/get.dart';
+import 'package:open_street_map_search_and_pick/open_street_map_search_and_pick.dart';
+import 'package:latlong2/latlong.dart';
 
 class CreateEventController extends GetxController {
   ///
@@ -12,6 +15,7 @@ class CreateEventController extends GetxController {
 
   final logger = Get.find<LoggerService>();
   final data = Get.find<DriverAssistanceService>();
+  final locationService = Get.find<LocationService>();
 
   ///
   /// VARIABLES
@@ -94,5 +98,26 @@ class CreateEventController extends GetxController {
     errorLongitude = longitude <= 0;
 
     validated = !(errorEventType || errorLatitude || errorLongitude);
+  }
+
+  void pickLocation(PickedData pickedData) {
+    latField.value =
+        latField.value.copyWith(text: pickedData.latLong.latitude.toString());
+    longField.value =
+        longField.value.copyWith(text: pickedData.latLong.longitude.toString());
+
+    Get.back();
+  }
+
+  Future<LatLng> getCurrentLocation() async {
+    final location = await locationService.getLocationWithGeolocatorPackage();
+    final latitude = location?.latitude;
+    final longitude = location?.longitude;
+
+    if (latitude != null && longitude != null) {
+      return LatLng(latitude, longitude);
+    }
+
+    return LatLng(45.2862381, 18.4067281);
   }
 }

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_driver_assistance/models/event_type.dart';
+import 'package:flutter_driver_assistance/pages.dart';
 import 'package:flutter_driver_assistance/widgets/primary_button.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
@@ -104,6 +105,7 @@ class _CreateEventScreenState extends State<CreateEventScreen> {
                   SizedBox(height: 20.h),
 
                   GestureDetector(
+                    onTap: () => Get.toNamed(DARoutes.pickLocationScreen),
                     child: Text(
                       'pickLocation'.tr,
                       style: DATextStyles.body1
