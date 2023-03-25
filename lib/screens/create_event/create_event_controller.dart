@@ -106,6 +106,9 @@ class CreateEventController extends GetxController {
     longField.value =
         longField.value.copyWith(text: pickedData.latLong.longitude.toString());
 
+    latitude = pickedData.latLong.latitude;
+    longitude = pickedData.latLong.longitude;
+
     Get.back();
   }
 

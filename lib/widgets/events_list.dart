@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_driver_assistance/constants/text_styles.dart';
+import 'package:flutter_driver_assistance/pages.dart';
 import 'package:flutter_driver_assistance/screens/events/events_controller.dart';
 import 'package:flutter_driver_assistance/widgets/event_list_tile.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -25,6 +26,33 @@ class EventsList extends StatelessWidget {
             ),
             SizedBox(
               height: 10.h,
+            ),
+            GestureDetector(
+              onTap: () => Get.toNamed(DARoutes.eventsLocationScreen),
+              child: Text(
+                'pickLocation'.tr,
+                style: DATextStyles.body1.copyWith(
+                  color: context.theme.colorScheme.primary,
+                ),
+              ),
+            ),
+            SizedBox(
+              height: 20.h,
+            ),
+            Obx(
+              () => controller.address.isNotEmpty
+                  ? Column(
+                      children: [
+                        Text(
+                          controller.address,
+                          style: DATextStyles.body1,
+                        ),
+                        SizedBox(
+                          height: 20.h,
+                        ),
+                      ],
+                    )
+                  : Container(),
             ),
             Obx(
               () => controller.events.isNotEmpty

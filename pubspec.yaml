@@ -71,7 +71,7 @@ flutter:
 
   assets:
     - assets/icons/
-#    - assets/images/
+    - assets/images/
 #    - assets/countries_json.json
 
 # Configuration for 'flutter_launcher_icons'

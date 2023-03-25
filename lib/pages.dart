@@ -1,9 +1,10 @@
 import 'package:flutter_driver_assistance/screens/create_event/create_event_binding.dart';
 import 'package:flutter_driver_assistance/screens/create_event/create_event_screen.dart';
-import 'package:flutter_driver_assistance/screens/create_event/pick_location/pick_location_screen.dart';
-import 'package:flutter_driver_assistance/screens/events/event_details/event_details_screen.dart';
+import 'package:flutter_driver_assistance/screens/create_event/screens/pick_location_screen.dart';
+import 'package:flutter_driver_assistance/screens/events/screens/event_details_screen.dart';
 import 'package:flutter_driver_assistance/screens/events/events_binding.dart';
 import 'package:flutter_driver_assistance/screens/events/events_screen.dart';
+import 'package:flutter_driver_assistance/screens/events/screens/events_location_screen.dart';
 import 'package:flutter_driver_assistance/screens/main/main_binding.dart';
 import 'package:flutter_driver_assistance/screens/main/main_screen.dart';
 import 'package:flutter_driver_assistance/screens/splash/splash_biding.dart';
@@ -47,6 +48,10 @@ final pages = [
     name: DARoutes.pickLocationScreen,
     page: PickLocationScreen.new,
   ),
+  GetPage(
+    name: DARoutes.eventsLocationScreen,
+    page: EventsLocationScreen.new,
+  ),
 ];
 
 /// All pages have their designated names which can be found here
@@ -57,4 +62,5 @@ class DARoutes {
   static const eventDetailsScreen = '/event_details_screen';
   static const createEventScreen = '/create_event_screen';
   static const pickLocationScreen = '/pick_location_screen';
+  static const eventsLocationScreen = '/events_location_screen';
 }
