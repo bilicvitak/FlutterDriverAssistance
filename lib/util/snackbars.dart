@@ -11,14 +11,14 @@ class DASnackbars {
   /// Snackbar shown if some success happens
   static void showSuccessSnackbar({
     required String message,
-    Color backgroundColor = const Color(0xFFA5D6A7),
-    IconData icon = Icons.check,
+    Color backgroundColor = Colors.green,
+    IconData icon = Icons.check_circle_outline,
   }) =>
       Get.rawSnackbar(
         backgroundColor: backgroundColor,
         icon: Icon(
           icon,
-          color: Colors.green,
+          color: Colors.white,
         ),
         message: message,
         margin: EdgeInsets.all(32.r),
