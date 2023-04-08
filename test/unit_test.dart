@@ -23,7 +23,12 @@ void main() {
     Get.lazyPut(() => CreateEventController());
   });
 
-  tearDown(() => Get.delete<CreateEventController>());
+  tearDown(() {
+    Get.delete<LoggerService>();
+    Get.delete<DriverAssistanceService>();
+    Get.delete<LocationService>();
+    Get.delete<CreateEventController>();
+  });
 
   test('Get current location', () {
     /// Arrange

@@ -75,6 +75,8 @@ class CreateEventController extends GetxController {
     locationService = Get.find<LocationService>();
 
     eventTypes = await data.getEventTypes() ?? <EventType>[];
+
+    logger.w('tuten');
   }
 
   ///

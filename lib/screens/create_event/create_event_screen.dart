@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_driver_assistance/constants/keys.dart';
 import 'package:flutter_driver_assistance/models/event_type.dart';
 import 'package:flutter_driver_assistance/pages.dart';
 import 'package:flutter_driver_assistance/widgets/primary_button.dart';
@@ -72,6 +73,7 @@ class _CreateEventScreenState extends State<CreateEventScreen> {
 
                   /// Latitude
                   TextField(
+                    key: DAKeys.tfLatitude,
                     keyboardType: TextInputType.number,
                     decoration: InputDecoration(
                       border: const OutlineInputBorder(),
@@ -89,6 +91,7 @@ class _CreateEventScreenState extends State<CreateEventScreen> {
 
                   /// Longitude
                   TextField(
+                    key: DAKeys.tfLongitude,
                     keyboardType: TextInputType.number,
                     decoration: InputDecoration(
                       border: const OutlineInputBorder(),
