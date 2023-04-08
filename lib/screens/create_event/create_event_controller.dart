@@ -13,9 +13,9 @@ class CreateEventController extends GetxController {
   /// DEPENDENCIES
   ///
 
-  final logger = Get.find<LoggerService>();
-  final data = Get.find<DriverAssistanceService>();
-  final locationService = Get.find<LocationService>();
+  late LoggerService logger;
+  late DriverAssistanceService data;
+  late LocationService locationService;
 
   ///
   /// VARIABLES
@@ -69,6 +69,10 @@ class CreateEventController extends GetxController {
   @override
   Future<void> onInit() async {
     super.onInit();
+
+    logger = Get.find<LoggerService>();
+    data = Get.find<DriverAssistanceService>();
+    locationService = Get.find<LocationService>();
 
     eventTypes = await data.getEventTypes() ?? <EventType>[];
   }
